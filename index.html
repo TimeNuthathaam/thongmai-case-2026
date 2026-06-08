@@ -1,0 +1,1428 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คดีนักเล่าเรื่องผี: ทองใหม่ vs เกศ — กล่องแฉฉบับเต็ม</title>
+<style>
+  :root {
+    --ivory:    #FAF9F5;
+    --slate:    #141413;
+    --clay:     #D97757;
+    --oat:      #E3DACC;
+    --olive:    #788C5D;
+    --rust:     #B04A3F;
+    --gray-100: #F0EEE6;
+    --gray-150: #F0EEE6;
+    --gray-300: #D1CFC5;
+    --gray-500: #87867F;
+    --gray-700: #3D3D3A;
+    --white:    #FFFFFF;
+
+    --serif: ui-serif, Georgia, 'Times New Roman', serif;
+    --sans:  system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono:  ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+    --radius-panel: 12px;
+    --radius-card:  10px;
+    --radius-row:    8px;
+    --radius-tag:    6px;
+    --radius-pill: 999px;
+
+    --border: 1.5px solid var(--gray-300);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 56px 24px 120px;
+    background: var(--ivory);
+    color: var(--gray-700);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { max-width: 1080px; margin: 0 auto; }
+
+  code { overflow-wrap: anywhere; word-break: break-all; }
+
+  /* Headings */
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--slate);
+    margin: 0 0 14px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: var(--slate);
+    margin: 0 0 6px;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--slate);
+    margin: 0 0 6px;
+  }
+  h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--slate);
+    margin: 0 0 4px;
+  }
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--gray-300);
+    margin: 0 0 22px;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+
+  /* Section */
+  section { margin-bottom: 52px; }
+
+  /* Header */
+  header { margin-bottom: 40px; }
+  header .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 8px;
+  }
+  header .subtitle {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--gray-700);
+    font-style: italic;
+    margin-top: 4px;
+    max-width: 720px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-300);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  /* Body text */
+  p { margin: 0 0 12px; max-width: 720px; }
+  a { color: var(--clay); text-decoration: none; border-bottom: 1px dotted transparent; }
+  a:hover { border-bottom-color: var(--clay); }
+  code {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--gray-100);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* TL;DR */
+  .tldr-soft {
+    border: 1.5px solid var(--gray-300);
+    border-left: 4px solid var(--clay);
+    border-radius: 10px;
+    background: #fff;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+  }
+  .tldr-soft .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clay);
+    margin-bottom: 6px;
+  }
+  .tldr-soft p { margin: 0; color: var(--gray-700); }
+  .tldr-soft p + p { margin-top: 8px; }
+
+  /* Stat band */
+  .stat-band {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .stat-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 18px 20px 16px;
+  }
+  .stat-card.warn { border-left: 4px solid var(--clay); padding-left: 19px; }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.4;
+  }
+
+  /* Grid helpers */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* Cast card */
+  .cast-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: 16px 18px;
+  }
+  .cast-card .role {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--clay);
+    margin-bottom: 4px;
+  }
+  .cast-card .name {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--slate);
+    margin-bottom: 4px;
+  }
+  .cast-card .fact {
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+
+  /* Comparison card */
+  .compare-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 20px 22px;
+  }
+  .compare-card .name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--slate);
+    margin-bottom: 4px;
+  }
+  .compare-card .tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-500);
+    margin-bottom: 14px;
+  }
+  .compare-card dl { margin: 0; }
+  .compare-card dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+    margin-top: 12px;
+  }
+  .compare-card dd {
+    margin: 2px 0 0 0;
+    font-size: 14.5px;
+    color: var(--gray-700);
+  }
+  .compare-card .unknown { color: var(--gray-500); font-style: italic; }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    margin: 16px 0 0 0;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 4px;
+    width: 1.5px;
+    background: var(--gray-300);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--oat);
+    border: 1.5px solid var(--clay);
+  }
+  .tl-item.junction::before {
+    background: var(--clay);
+    border-color: var(--clay);
+    box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.15);
+  }
+  .tl-item .tl-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+  }
+  .tl-item .tl-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--slate);
+    margin: 2px 0 4px;
+  }
+  .tl-item .tl-body {
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+
+  /* Income column */
+  .income-col {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 20px 22px;
+  }
+  .income-col h3 {
+    margin-bottom: 12px;
+  }
+  .income-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .income-col li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: 14px;
+    color: var(--gray-700);
+    border-bottom: 1px dashed var(--gray-300);
+  }
+  .income-col li:last-child { border-bottom: none; }
+  .income-col li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: var(--clay);
+    font-family: var(--mono);
+  }
+  .income-col li b { color: var(--slate); }
+
+  /* Evidence table */
+  .ev-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    overflow: hidden;
+    table-layout: fixed;
+  }
+  .ev-table th, .ev-table td {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 13.5px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--gray-300);
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+  .ev-table th {
+    background: var(--oat);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-700);
+    font-weight: 600;
+  }
+  .ev-table tr:last-child td { border-bottom: none; }
+  .ev-table tr.smoking { background: rgba(176, 74, 63, 0.06); }
+  .ev-table tr.smoking td:first-child { border-left: 3px solid var(--rust); padding-left: 11px; }
+
+  /* Risk dot */
+  .risk {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--gray-700);
+    font-family: var(--mono);
+  }
+  .risk-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .risk-dot.light { background: var(--gray-300); }
+  .risk-dot.medium { background: var(--clay); }
+  .risk-dot.heavy { background: var(--rust); }
+  .risk-dot.smoking { background: var(--slate); }
+
+  /* Team war */
+  .team-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 20px 22px;
+  }
+  .team-card.t-thong { border-top: 3px solid var(--rust); }
+  .team-card.t-kade { border-top: 3px solid var(--olive); }
+  .team-card .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+  .team-card h3 { margin-bottom: 4px; }
+  .team-card .stance {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-700);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--gray-300);
+    padding-bottom: 12px;
+  }
+  .team-ev {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--gray-300);
+  }
+  .team-ev:last-child { border-bottom: none; }
+  .team-ev .weight {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--slate);
+    background: var(--oat);
+    border-radius: 4px;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    min-width: 32px;
+    text-align: center;
+  }
+  .team-ev .ev-title {
+    font-size: 14px;
+    color: var(--slate);
+    font-weight: 600;
+  }
+  .team-ev .ev-body {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-top: 2px;
+  }
+
+  /* Scorecard */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    overflow: hidden;
+  }
+  .score-table th, .score-table td {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .score-table th {
+    background: var(--oat);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-700);
+    font-weight: 600;
+  }
+  .score-table td.score {
+    font-family: var(--serif);
+    font-size: 22px;
+    text-align: center;
+    color: var(--slate);
+  }
+  .score-table td.winner {
+    font-weight: 600;
+    color: var(--slate);
+  }
+  .score-table tr.total td {
+    background: var(--slate);
+    color: var(--ivory);
+    font-weight: 600;
+  }
+  .score-table tr.total td.score { font-size: 26px; }
+  .score-table tr.total td.winner { color: var(--clay); }
+
+  /* Quote card */
+  .quote-card {
+    background: var(--oat);
+    border-radius: var(--radius-card);
+    padding: 18px 20px;
+  }
+  .quote-card .q {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--slate);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .quote-card .attr {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-500);
+  }
+
+  /* Analysis */
+  .whys {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: why;
+  }
+  .whys li {
+    position: relative;
+    padding: 10px 0 10px 48px;
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 14.5px;
+  }
+  .whys li:last-child { border-bottom: none; }
+  .whys li::before {
+    counter-increment: why;
+    content: "Why " counter(why);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--clay);
+    background: var(--oat);
+    border-radius: 4px;
+    padding: 3px 6px;
+  }
+  .why-root {
+    background: var(--slate);
+    color: var(--ivory);
+    border-radius: var(--radius-panel);
+    padding: 18px 22px;
+    margin-top: 16px;
+  }
+  .why-root .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clay);
+    margin-bottom: 6px;
+  }
+  .why-root p { margin: 0; color: var(--ivory); }
+
+  /* Forecast */
+  .forecast-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 18px 20px;
+  }
+  .forecast-card .verdict {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .forecast-card .verdict.perm { color: var(--rust); }
+  .forecast-card .verdict.likely { color: var(--clay); }
+  .forecast-card .verdict.return { color: var(--olive); }
+  .forecast-card h4 { margin-bottom: 6px; }
+  .forecast-card p { font-size: 13.5px; }
+
+  /* YouTube tier */
+  .yt-tier {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-panel);
+    padding: 18px 22px;
+    margin-bottom: 12px;
+  }
+  .yt-tier .tier-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--clay);
+    margin-bottom: 6px;
+  }
+
+  /* Bias card */
+  .bias-card {
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    padding: 16px 18px;
+  }
+  .bias-card h4 { font-size: 15px; margin-bottom: 6px; }
+  .bias-card p { font-size: 13.5px; }
+
+  /* Mobile */
+  @media (max-width: 860px) {
+    .stat-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .ev-table { font-size: 12px; }
+    .ev-table th, .ev-table td { padding: 9px 10px; }
+  }
+  @media (max-width: 720px) {
+    body { padding: 40px 18px 96px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 21px; }
+    .page { max-width: 100%; }
+    .stat-band { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-num { font-size: 32px; }
+    .quote-card .q { font-size: 18px; }
+    .ev-table th:nth-child(2), .ev-table td:nth-child(2) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">GOSSIP DEEP DIVE · 2 มิ.ย. 2569</div>
+    <h1>คดีนักเล่าเรื่องผี</h1>
+    <div class="subtitle">ทองใหม่ × เกศ × พี่ป๋อง — 3 ชั่วโมงครึ่งที่สั่นวงการ The Shock</div>
+    <div class="meta">อัปเดตล่าสุด: 2026-06-08 · สื่อ: โหนกระแส / ข่าวใส่ไข่ / Thairath / PAKE ENT</div>
+  </header>
+
+  <div class="tldr-soft">
+    <div class="label">TL;DR</div>
+    <p><b>เกศ</b> อดีต FC → ลูกดวง → แฟนทองใหม่ แฉในรายการโหนกระแส 2 มิ.ย. 2569 ว่าถูก <b>ทองใหม่</b> (นักเล่าเรื่องผี The Shock) <b>คบซ้อนเมียจดทะเบียน 26 ปี แอบถ่ายรูปตอนหลับ ขู่ปล่อยภาพ</b> — ทองใหม์โฟนอินปฏิเสธ สวนกลับว่าเกศ "รู้ตั้งแรก + ยังอยู่บ้านเดียวกับสามี + อ้างท้องเท็จ"</p>
+    <p>พี่ป๋อง กพล สั่งพักงานทองใหม่ทันที ทั้งสองฝ่ายออกมาขอโทษพี่ป๋องหลังจบรายการ ศาลเตี้ยโซเชียลระเบิด — เรื่องนี้ไม่มี "ฝ่ายบริสุทธิ์" มีแต่คนที่ต่างก็มี "ความจริงครึ่งเดียว"</p>
+  </div>
+
+  <!-- ========== STAT BAND ========== -->
+  <section>
+    <div class="stat-band">
+      <div class="stat-card warn">
+        <div class="stat-num">3:30</div>
+        <div class="stat-label">ชั่วโมง<br>รายการโหนกระแส</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">26 ปี</div>
+        <div class="stat-label">ภรรยาจดทะเบียน<br>ของทองใหม่</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">888฿</div>
+        <div class="stat-label">น้ำหอม Witcherii<br>1 แพ็ก (3 ขวด)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">34 vs 21</div>
+        <div class="stat-label">คะแนนกรรมการ<br>ทองใหม่ vs เกศ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHO IS WHO ========== -->
+  <section>
+    <h2>ใครเป็นใคร</h2>
+    <hr class="rule">
+    <div class="grid-2">
+      <div class="cast-card">
+        <div class="role">ฝ่ายชาย · จำเลยหลัก</div>
+        <div class="name">ทองใหม่</div>
+        <div class="fact">นักเล่าเรื่องผี เจ้าของแบรนด์ <b>Witcherii Perfume</b> และเครื่องราง "เฉลวเพชร 7 ตา" · ผู้ร่วมก่อตั้ง The Shock · ถูกสั่งพักงานไร้กำหนด 1 มิ.ย.</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">ฝ่ายหญิง · ผู้แฉ</div>
+        <div class="name">เกศ อินทิตา (เกด)</div>
+        <div class="fact">นักธุรกิจอสังหา (บ้านมือสอง 20 ปี) + นักเล่าเรื่องผีหน้าใหม่ · เพจ Facebook 22,715 ไลก์ · คำโปรย "คนขายบ้านที่เล่าเรื่องผีได้นิดหน่อย"</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">อดีตสามีเกศ · พยาน</div>
+        <div class="name">โจ</div>
+        <div class="fact">ส่ง DM เข้ารายการโหนกระแส อ่านออกอากาศ: "2 คนนี้ศีลเสมอกัน" + ประกาศตัดสัมพันธ์เกศ · ใส่ AirTag ในรถเกศ</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">เจ้าของ The Shock</div>
+        <div class="name">ป๋อง กพล ทองพลับ</div>
+        <div class="fact">ก่อตั้งบริษัท เดอะช็อค จำกัด · โฟนอินสั่งพักงานทองใหม่ไร้กำหนด · "เอ็นดูน้องทั้งคู่" แต่เลือกพักงานฝ่ายเดียว</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">พิธีกร</div>
+        <div class="name">หนุ่ม กรรชัย กำเนิดพลอย</div>
+        <div class="fact">พิธีกรโหนกระแส ช่อง 3 HD · กรรชัยสรุปดราม่า 02:30 น. ความยาว 3:30 ชม. · "เอากลับไปทั้ง 2 คน!"</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">ภรรยาจดทะเบียน 26 ปี</div>
+        <div class="name">ภรรยาทองใหม่ (ไม่เปิดเผยชื่อ)</div>
+        <div class="fact">ออกมาเตือนเกศเอง 5 ข้อสั้น ๆ · "ผู้ชายคนนี้ปีนึงมีผู้หญิงไม่ต่ำกว่า 10 คน" · เตือนเรื่องรสนิยม + ถ่ายรูปเก็บ</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">ตัวละครเสริม</div>
+        <div class="name">ลูกดวง / แฟนเก่า / "ซาแซง"</div>
+        <div class="fact">ลูกดวงจากต่างประเทศ · แฟนเก่าคอมเมนต์ "ทองเหม็น" · "ซาแซง" ผู้หญิงกระชากแขนเกศที่ห้าง (ฝ่ายทองใหม่ว่า FC, ฝ่ายเกศว่าเป็นผู้หญิงอีกคน)</div>
+      </div>
+      <div class="cast-card">
+        <div class="role">ที่ปรึกษา</div>
+        <div class="name">ทนายตุ๋ย / ทนายสายหยุด</div>
+        <div class="fact">ทนายตุ๋ยเสนอทำ "บันทึกข้อตกลง" เป็นลายลักษณ์อักษร · ทนายสายหยุดที่ปรึกษาฝ่ายเกศ · ทนายตุ๋ยยอมรับเอง "ไม่มีข้อความขู่"</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BIO DEEP DIVE ========== -->
+  <section>
+    <h2>BIO เจาะลึก: ทองใหม่ vs เกศ</h2>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      หลายช่อง "UNKNOWN" — ไม่ปรากฏในแหล่งข่าวสาธารณะ (Perplexity Research, 2026-06-08)
+    </p>
+    <div class="grid-2">
+      <div class="compare-card">
+        <div class="name">ทองใหม่</div>
+        <div class="tag">The Shock · Witcherii Perfume</div>
+        <dl>
+          <dt>ชื่อจริง</dt>
+          <dd class="unknown">ไม่ปรากฏในสื่อสาธารณะ</dd>
+          <dt>การศึกษา</dt>
+          <dd class="unknown">ไม่ปรากฏ</dd>
+          <dt>ภูมิลำเนา</dt>
+          <dd class="unknown">ไม่ปรากฏ (ครอบครัวหมอแผนไทย)</dd>
+          <dt>สถานะสมรส</dt>
+          <dd>ภรรยาจดทะเบียน 26 ปี (อ้างโดยเกศ + ภรรยาจริง)</dd>
+          <dt>ครอบครัว</dt>
+          <dd>คุณแม่ <b>หมอแผนไทย</b> ป่วยเบาหวานรุนแรง น้ำตาลสวิง — เหตุผลที่อ้างว่าขายเครื่องราง</dd>
+          <dt>อาชีพปัจจุบัน</dt>
+          <dd>The Ghost Radio (เก่า) → The Shock 13 (ปัจจุบัน) + Witcherii Perfume + เครื่องราง + ดูดวง 1-1 + <b>พักงาน 1 มิ.ย.</b></dd>
+        </dl>
+      </div>
+      <div class="compare-card">
+        <div class="name">เกศ อินทิตา</div>
+        <div class="tag">Baan168 Home & Service · เกศบ้านมือสอง</div>
+        <dl>
+          <dt>ชื่อจริง</dt>
+          <dd>hint: <b>พนิสara สารวิทยาคม</b> (Panisara Saravittayakom) — จาก Facebook handle · ความมั่นใจ: ปานกลาง</dd>
+          <dt>การศึกษา</dt>
+          <dd class="unknown">ไม่ปรากฏ</dd>
+          <dt>ภูมิลำเนา</dt>
+          <dd class="unknown">ไม่ปรากฏ</dd>
+          <dt>สถานะสมรส</dt>
+          <dd>อ้างว่า "เลิกกับโจแล้ว แต่อยู่บ้านเดียวกันเพื่อลูก" · โจยืนยันเลิกเช่นกัน</dd>
+          <dt>ครอบครัว</dt>
+          <dd>มีลูก (ต้องเลี้ยงร่วมกับโจ) · ธุรกิจ <b>อสังหาบ้านมือสอง 20 ปี</b> ผ่านเพจ Baan168</dd>
+          <dt>อาชีพปัจจุบัน</dt>
+          <dd>นายหน้าอสังหา (commission) + นักเล่าเรื่องผี (เข้าวงการ ~1 ปี) + เพจ FB 22,715 ไลก์ + รับงาน content (Line: kasepanis168)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAREER TIMELINE — ทองใหม่ ========== -->
+  <section>
+    <h2>Career Timeline: ทองใหม่</h2>
+    <hr class="rule">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">ไม่ทราบปี</div>
+        <div class="tl-title">The Ghost Radio</div>
+        <div class="tl-body">จุดเริ่มต้น — นักเล่าเรื่องผีบนวิทยุออนไลน์ เป็นที่รู้จักในวงการเรื่องเล่าลี้ลับ</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ไม่ทราบปี · ก่อตั้ง</div>
+        <div class="tl-title">The Shock Radio + The Shock 13</div>
+        <div class="tl-body">ร่วมก่อตั้งบริษัท เดอะช็อค จำกัด · ออกอากาศ จันทร์-ศุกร์ 21:00 (YouTube) / 21:45-03:00 (วิทยุ)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ไม่ทราบปี · เริ่มขาย</div>
+        <div class="tl-title">Witcherii Perfume (888฿/แพ็ก 3 ขวด)</div>
+        <div class="tl-body">แบรนด์น้ำหอมส่วนตัว · เพจ Facebook 27,475 ไลก์ · จัดคลาส Magic Of Scent Workshop</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ไม่ทราบปี</div>
+        <div class="tl-title">เครื่องราง "เฉลวเพชร 7 ตา"</div>
+        <div class="tl-body">อ้างว่าขายเพื่อหาเงินรักษาคุณแม่ (เบาหวานรุนแรง น้ำตาลสวิง)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ก่อน มิ.ย. 2026</div>
+        <div class="tl-title">ดูดวง 1-1 · คิวจองยาก</div>
+        <div class="tl-body">ลูกดวงมาจากต่างประเทศ · ซึมซับศาสตร์ดูดวงมาจากครอบครัวหมอแผนไทย</div>
+      </div>
+      <div class="tl-item junction">
+        <div class="tl-date">1 มิ.ย. 2569</div>
+        <div class="tl-title">พักงานไร้กำหนด</div>
+        <div class="tl-body">พี่ป๋อง กพล แถลงสั่งพักงานทันทีที่ข่าวแตก · "จนกว่าความจริงทุกอย่างจะปรากฏ"</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INCOME — SIDE BY SIDE ========== -->
+  <section>
+    <h2>กระเป๋ารายได้ (Income)</h2>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      ตัวเลขรายได้ส่วนใหญ่ไม่เปิดเผย — เป็น "snapshots" จากราคาขายปลีก + ข้อมูล engagement ที่ปรากฏ
+    </p>
+    <div class="grid-2">
+      <div class="income-col">
+        <h3>ทองใหม่</h3>
+        <ul>
+          <li><b>Witcherii Perfume</b> · 888฿/แพ็ก 3 ขวด 10ml (≈ 296฿/ขวด)</li>
+          <li><b>ดูดวง 1-1</b> · คิวยาว ลูกดวงต่างประเทศ (ราคาไม่เปิดเผย)</li>
+          <li><b>เครื่องราง / เฉลวเพชร 7 ตา</b> · อ้างเพื่อรักษาแม่ (ราคาไม่เปิดเผย)</li>
+          <li><b>ค่าจ้าง The Shock</b> · พนักงาน/พิธีกรประจำรายการ (ตัวเลขไม่เปิดเผย)</li>
+          <li><b>โฆษณา / สปอนเซอร์</b> · YouTube + IG (ไม่เปิดเผย)</li>
+          <li><b style="color: var(--rust);">ผลกระทบ</b> · ดราม่าทำให้พักงาน → รายได้ The Shock + ดูดวงบางส่วนหยุดชะงัก</li>
+        </ul>
+      </div>
+      <div class="income-col">
+        <h3>เกศ</h3>
+        <ul>
+          <li><b>Commission ขายบ้านมือสอง</b> · ประสบการณ์ 20 ปี · ทาวน์โฮม/บ้านเดี่ยว/คอนโด + ยื่นสินเชื่อ (ตัวเลขไม่เปิดเผย)</li>
+          <li><b>Facebook "เกศ อินทิตา"</b> · 22,715 ไลก์</li>
+          <li><b>TikTok</b> · อินฟลูเอนเซอร์สายผี+อสังหา</li>
+          <li><b>งาน Content / รีวิว</b> · รับจ้าง (Line: kasepanis168)</li>
+          <li><b>เคยออก The Shock</b> · เล่าเรื่องผีในเครือเดียวกับทองใหม่</li>
+          <li><b>ผลกระทบจากดราม่า</b> · "สะเทือนอาณาจักรธุรกิจอสังหา" — ลูกค้า/ชื่อเสียงกระทบ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="oat-panel" style="background: var(--oat); border-radius: var(--radius-panel); padding: 16px 20px; margin-top: 14px;">
+      <div style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-700); margin-bottom: 6px;">Industry benchmark</div>
+      <div style="font-size: 13.5px; color: var(--gray-700);">
+        <b>The Ghost Radio</b> (บริษัทผลิตรายการ) · ปี 2566: รายได้ <b>59.3 ลบ.</b> · กำไร 15.1 ลบ. ·
+        ค่าเล่า <b>1,000฿/คน</b> + โบนัส <b>10,000฿</b> ถ้าคลิปแตะ 1 ล้านวิว ·
+        แจ็ค เดอะโกสต์ · ผู้ติดตาม 6+ ล้าน · ไลฟ์ 104 ครั้ง/ปี
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TIMELINE OF EVENTS ========== -->
+  <section>
+    <h2>Timeline เหตุการณ์ (29 พ.ค. → 2 มิ.ย. 2569)</h2>
+    <hr class="rule">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">~1 ปีก่อน</div>
+        <div class="tl-title">เกศเข้าวงการนักเล่าเรื่องผี</div>
+        <div class="tl-body">จากเดิมทำอสังหาบ้านมือสอง → เริ่มเล่าเรื่องผี เคยออก The Shock</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ก่อนคบ</div>
+        <div class="tl-title">FC เกศเตือนเรื่องมิจฉาชีพ</div>
+        <div class="tl-body">เกศทักทองใหม่เตือนเรื่อง "นักเล่ามิจฉาชีพ" ในวงการ · ทองใหม่เริ่มทักจีบกลับ · เกศปฏิเสธเพราะรู้ว่ามีภรรยา</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ช่วงคบ</div>
+        <div class="tl-title">กลเม็ดจีบ: น้ำหอมสูตรเฉพาะ + เพลงอัด + ธรรมะหยอด</div>
+        <div class="tl-body">ทองใหม์ส่งน้ำหอม Witcherii สูตรเฉพาะ + คลิปร้องเพลงอัดผ่านไลน์ + ข้อความ "มุกเสาไฟฟ้า" ยาวเหยียด · เกศยอมเพราะทองใหม์บอกจะไปเลิกกับเมีย</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ระหว่างคบ</div>
+        <div class="tl-title">เหตุ "ผู้หญิงกระชากแขน" ที่ห้าง</div>
+        <div class="tl-body">ทองใหม์อ้างว่าเป็น FC ("ซาแซง") · เกศอ้างว่าเป็นผู้หญิงอีกคนของทองใหม์ — ภรรยาจดทะเบียนยืนยันภายหลัง</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ระหว่างคบ</div>
+        <div class="tl-title">AirTag ในรถเกศ</div>
+        <div class="tl-body">มือถือเกศเตือน "มี AirTag ใกล้" · ทองใหม์โทรบอกให้เกศแยกกับสามี · เกศยอมรับว่าโจเป็นคนใส่</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">ระหว่างคบ</div>
+        <div class="tl-title">เรื่อง "ตกเลือด/ท้อง"</div>
+        <div class="tl-body">เกศอ้างว่าตั้งครรภ์แล้วแท้ง ตั้งชื่อลูกที่หลุดไป · ไม่ได้ไปหาหมอ ไม่ได้ตรวจครรภ์ · ทองใหม์สงสัยว่า "ผูกมัด"</div>
+      </div>
+      <div class="tl-item junction">
+        <div class="tl-date">29 พ.ค. 2569 · JUNCTION DAY</div>
+        <div class="tl-title">ทองใหม์ไลฟ์ YouTube → "ทองเหม็น" → เกศระเบิด</div>
+        <div class="tl-body">ทองใหม์ทักเกศในแชท live แล้วลบข้อความทิ้ง · แฟนเก่าเข้ามาคอมเมนต์ "ไอ้นี่ทองเหม็นละ" · เกศเห็น + โกรธ + ส่งข้อความขู่ "จะจัดการ" · ทองใหม์นำคลิปไปเปิดในรายการ</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1 มิ.ย. 2569</div>
+        <div class="tl-title">PAKE ENT แถลงพักงานทองใหม์</div>
+        <div class="tl-body">เพจ The Shock Radio ออกแถลงการณ์ "พักงานทันที + งดกิจกรรมทั้งหมด จนกว่าความจริงจะปรากฏ"</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2 มิ.ย. 2569 · 02:30 น.</div>
+        <div class="tl-title">โหนกระแส LIVE 3:30 ชม.</div>
+        <div class="tl-body">เกศ vs ทองใหม์ (โฟนอิน) เผชิญหน้า · ป๋องโฟนอินสั่งพักงาน + บ่น "อกตัญญู" · โจส่ง DM ให้พี่หนุ่มอ่าน "2 คนนี้ศีลเสมอกัน"</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">หลังจบรายการ</div>
+        <div class="tl-title">ทั้งคู่ขอจบเรื่อง</div>
+        <div class="tl-body">เกศโพสต์ "กราบขอโทษพ่อป๋อง" + ยอมรับผิด · ทองใหม์โพสต์ "ขอบคุณพ่อป๋อง" + จะปรับปรุง · PAKE ENT แถลงขอจบเรื่อง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVIDENCE CATALOGUE ========== -->
+  <section>
+    <h2>หลักฐานคาหนังคาเขา</h2>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      16 ชิ้น · น้ำหนัก: LIGHT (ข้อมูลทั่วไป) → MEDIUM (พฤติกรรม/ยอมรับเอง) → HEAVY (พยานบุคคลที่ 3) → SMOKING GUN (หักล้างทั้งสองฝ่าย)
+    </p>
+    <div style="overflow-x: auto;">
+      <table class="ev-table">
+        <thead>
+          <tr>
+            <th style="width: 36px;">#</th>
+            <th>หลักฐาน</th>
+            <th style="width: 22%;">ใครได้ประโยชน์</th>
+            <th style="width: 18%;">น้ำหนัก</th>
+            <th style="width: 22%;">ที่มา</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>ข้อความทักทายใน YouTube Live ที่ทองใหม์ลบทิ้ง (29 พ.ค.) — เกศแคปไว้ทัน</td>
+            <td>เกศ (พิรุธ) / ทองใหม์ (ยอมรับทักจริง)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md, kunchai_sarop_drama.md</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>AirTag หลายอันในรถเกศ — เกศยอมรับว่าสามี (โจ) เป็นคนใส่</td>
+            <td>ทองใหม์ (เกศยังอยู่กับสามี)</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>kunchai_sarop_drama.md</td>
+          </tr>
+          <tr class="smoking">
+            <td>3</td>
+            <td><b>DM ของโจ (อดีตสามีเกศ)</b> ส่งเข้ารายการโหนกระแส อ่านออกอากาศ: "2 คนนี้ศีลเสมอกัน" + "จากนี้ไปผมและคุณเกตไม่มีส่วนเกี่ยวข้องผูกพันใดๆกันอีก"</td>
+            <td>ทองใหม์ (หักล้างภาพ "ผู้เสียหาย" ของเกศ)</td>
+            <td><span class="risk"><span class="risk-dot smoking"></span>SMOKING GUN</span></td>
+            <td>nintakhao_2_jun.md, pake_ent_statement.md</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>เกศยอมรับสด ๆ — (a) เป็น FC มาก่อน (b) รู้ว่าทองใหม์มีภรรยา (c) ยังอยู่บ้านเดียวกับสามีเพื่อลูก</td>
+            <td>ทองใหม์ (หักล้าง "ผู้เสียหาย")</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md, kunchai_sarop_drama.md</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>ทองใหม์ยอมรับโฟนอิน — (a) มีผู้หญิงหลายคนจริง แต่ "ไม่เคยคบซ้อน" (b) ถ่ายรูปเกศตอนหลับ ส่งให้ดู (c) เคยบอกเมีย "คนนี้ฉันจริงจัง"</td>
+            <td>เกศ (ถ่ายรูปจริง) / ทองใหม์ (ไม่ได้คบซ้อน)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md, sao_chae_yub_thongmai.md</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>พี่ป๋อง กพล โฟนอินสั่งพักงานทองใหม์ + "เอ็นดูน้องทั้งคู่" + "อกตัญญู"</td>
+            <td>neutral (องค์กรตัดสิน)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>pong_kreat_short.md, nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>เกศยอมรับว่ารู้ตั้งแต่แรกว่าทองใหม์มีภรรยา — "เคยเจอกับภรรยาเค้าแล้ว"</td>
+            <td>ทองใหม์ (เกศรู้และยอมรับความเสี่ยงเอง)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>เกศยอมรับว่าตอนคบทองใหม์ "ยังอยู่บ้านเดียวกับสามี" — เหตุผล "สามีไม่มีทางไป เค้าก็เลยขออยู่ในบ้านต่อ เพื่อลูก"</td>
+            <td>ทองใหม์</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>เรื่องรสนิยมทางเพศ — เกศอ้าง vs ทองใหม์ตอบ "ผู้ชาย 100 คน เกินครึ่งชอบแบบนี้" (โฟนอิน)</td>
+            <td>เกศ (เปิดเผยพฤติกรรม) / ทองใหม์ (คำบอกเล่าฝ่ายเดียว)</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>kade_chae_thongmai_short.md, nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>รูปเกศตอนหลับ — เกศอ้างเป็น "รูปลับ" · ทองใหม์อ้างเป็น "ปก AV ใส่เสื้อผ้าปกติ" · ทนายตุ๋ยยอมรับ "อาจทำให้เขากลัวได้ว่าเป็นการขู่"</td>
+            <td>neutral (ตีความต่างกัน)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md, live_honkrasae_main.md</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>คำขู่ปล่อยภาพ — เกศอ้าง "ถ้าโพสต์รูปนี้ไป ทุกอย่างจบเลยนะ" · ทองใหม์ปฏิเสธ "ไม่เคยพูดแบบนั้นเลย" · ไม่มีข้อความขู่ตัวจริงปรากฏ</td>
+            <td>เกศ (ถ้าเชื่อ) / ทองใหม์ (ถ้าเชื่อ)</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>เกศโพสต์หลังรายการ "กราบขอโทษพ่อป๋อง" + ยอมรับผิดต่อ "ผลกระทบ" แต่ไม่ได้ยอมรับว่าเนื้อหาเท็จ</td>
+            <td>ทองใหม์ + พี่ป๋อง</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>pake_ent_statement.md</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>ทองใหม์โพสต์หลังรายการ "กราบขอบพระคุณพ่อป๋อง" — มารยาท ไม่ได้ยอมรับ/ปฏิเสธข้อกล่าวหา</td>
+            <td>neutral</td>
+            <td><span class="risk"><span class="risk-dot light"></span>LIGHT</span></td>
+            <td>pake_ent_statement.md</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>ทนายตุ๋ยเสนอ "บันทึกข้อตกลง" เป็นลายลักษณ์อักษร · ขอให้เกศถอนแจ้งความ</td>
+            <td>neutral (ทางออกทางกฎหมาย)</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>เรื่อง "ท้อง/แท้ง" — เกศเล่าว่า "ตั้งชื่อลูกแล้ว" · ทองใหม์ปฏิเสธ · เกศยอมรับเอง "ไม่ได้ไปหาหมอจริง ๆ ...อาจจะไม่จริงก็ได้"</td>
+            <td>ทองใหม์ (เกศยอมรับเอง)</td>
+            <td><span class="risk"><span class="risk-dot medium"></span>MEDIUM</span></td>
+            <td>nintakhao_2_jun.md</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>แฟนเก่าทองใหม์โผล่คอมเมนต์ YouTube "ไอ้นี่ทองเหม็นละ" — ต้นเหตุที่เกศ "หึง" จนระเบิด</td>
+            <td>เกศ (เหตุผลที่ออกมา) / ทองใหม์ (เกศหึง ไม่ใช่ถูกคุกคาม)</td>
+            <td><span class="risk"><span class="risk-dot heavy"></span>HEAVY</span></td>
+            <td>nintakhao_2_jun.md, kunchai_sarop_drama.md</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========== TEAM WAR ========== -->
+  <section>
+    <h2>Team War: ทองใหม่ vs เกศ</h2>
+    <hr class="rule">
+    <div class="grid-2">
+      <div class="team-card t-thong">
+        <div class="label">ทีมฝ่ายชาย</div>
+        <h3>Team ทองใหม่</h3>
+        <div class="stance">"เกศรู้ทุกอย่างตั้งแต่แรก และยังอยู่บ้านเดียวกับสามี — ทองใหม์เป็นเหยื่อที่ถูกบิดเบือน"</div>
+        <div class="team-ev">
+          <div class="weight">10/10</div>
+          <div>
+            <div class="ev-title">DM โจ: "ศีลเสมอกัน"</div>
+            <div class="ev-body">คนที่อยู่กับเกศมานานที่สุด = พยานที่เชื่อถือที่สุด หักล้าง "ผู้เสียหาย"</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">9/10</div>
+          <div>
+            <div class="ev-title">AirTag ในรถ · เกศยอมรับ</div>
+            <div class="ev-body">โจติดตามจับพิรุธ — เกศ "เลิกสามี" แต่ยังอยู่บ้านเดียวกัน</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">8/10</div>
+          <div>
+            <div class="ev-title">เกศรู้ตั้งแต่แรกว่ามีเมีย</div>
+            <div class="ev-body">เคยเจอภรรยาหน้าตัก · "คุณจะมาจีบฉันได้ไง คุณมีเมียอยู่แล้ว"</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">7/10</div>
+          <div>
+            <div class="ev-title">เกศอ้างท้อง แต่ไม่เคยหาหมอ</div>
+            <div class="ev-body">ยอมรับเอง "อาจจะไม่จริงก็ได้" · ตั้งชื่อลูก + โพสต์อาลัย = ผูกมัด</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">6/10</div>
+          <div>
+            <div class="ev-title">ทนายยอมรับ "ไม่มีข้อความขู่"</div>
+            <div class="ev-body">ส่งรูปตอนหลับ "แกล้ง" ไม่ใช่แบล็กเมล — ไม่มีคำว่า "ปล่อย"</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-card t-kade">
+        <div class="label">ทีมฝ่ายหญิง</div>
+        <h3>Team เกศ</h3>
+        <div class="stance">"เกศเป็นผู้ถูกกระทำ — ถูก lure ถ่ายรูป ข่มขู่ ปล่อยภาพ เมื่อขอเลิก — ไม่ใช่ผู้ร้าย"</div>
+        <div class="team-ev">
+          <div class="weight">9/10</div>
+          <div>
+            <div class="ev-title">ภรรยาจดทะเบียนออกมาเตือนเอง</div>
+            <div class="ev-body">"ผู้ชายคนนี้ปีนึงมีผู้หญิงไม่ต่ำกว่า 10 คน" — เกศไม่ใช่เหยื่อเดียว</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">9/10</div>
+          <div>
+            <div class="ev-title">ลบข้อความ + ลบคอมเมนต์ = guilty mind</div>
+            <div class="ev-body">คนดีไม่มีอะไรต้องลบ · เกศแคปหน้าจอไว้ทัน</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">8/10</div>
+          <div>
+            <div class="ev-title">ถ่ายรูปตอนหลับ + ปฏิเสธลบ</div>
+            <div class="ev-body">"ผมไม่ลบให้ง่าย ๆ หรอก" · ทนายยอมรับ "อาจทำให้เขากลัวได้"</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">7/10</div>
+          <div>
+            <div class="ev-title">ทองใหม์เป็นฝ่ายจีบก่อน + พาเปิดตัว</div>
+            <div class="ev-body">"มุกเสาไฟฟ้า" ยาวเหยียด · ไม่เคยพาผู้หญิงคนไหนไปเปิดตัวมาก่อน</div>
+          </div>
+        </div>
+        <div class="team-ev">
+          <div class="weight">6/10</div>
+          <div>
+            <div class="ev-title">เอาเรื่องท้อง/แท้งมาเปิดกลางรายการ</div>
+            <div class="ev-body">เกศเล่าให้แฟนฟังส่วนตัว · ทองใหม์เอามาเปิดทั้งประเทศ = ทำร้ายซ้ำ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REFEREE SCORECARD ========== -->
+  <section>
+    <h2>กรรมการ Scorecard</h2>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      กรรมการ neutral · ให้คะแนนตามน้ำหนักหลักฐาน · อ้างอิง 8 transcripts
+    </p>
+    <div style="overflow-x: auto;">
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>ประเด็น</th>
+            <th style="width: 100px; text-align: center;">ทองใหม่ /10</th>
+            <th style="width: 100px; text-align: center;">เกศ /10</th>
+            <th style="width: 160px;">ผู้ชนะ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ความน่าเชื่อถือของพยานหลักฐาน</td>
+            <td class="score">7</td>
+            <td class="score">5</td>
+            <td class="winner">ทองใหม์</td>
+          </tr>
+          <tr>
+            <td>ความสอดคล้องของคำพูด</td>
+            <td class="score">6</td>
+            <td class="score">5</td>
+            <td class="winner">ทองใหม์ (เล็กน้อย)</td>
+          </tr>
+          <tr>
+            <td>พฤติกรรมระหว่างออกอากาศ</td>
+            <td class="score">6</td>
+            <td class="score">4</td>
+            <td class="winner">ทองใหม์</td>
+          </tr>
+          <tr>
+            <td>ความเข้มแข็งของ alibi</td>
+            <td class="score">7</td>
+            <td class="score">3</td>
+            <td class="winner">ทองใหม์</td>
+          </tr>
+          <tr>
+            <td>สนับสนุนจากฝ่ายที่ 3</td>
+            <td class="score">8</td>
+            <td class="score">4</td>
+            <td class="winner">ทองใหม์</td>
+          </tr>
+          <tr class="total">
+            <td><b>รวม (50 คะแนนเต็ม)</b></td>
+            <td class="score"><b>34</b></td>
+            <td class="score"><b>21</b></td>
+            <td class="winner">ทองใหม์ (เชิงหลักฐาน)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 14px; font-size: 13.5px; color: var(--gray-700);">
+      <b>SMOKING GUN:</b> DM ของโจ (อดีตสามีเกศ) ที่ส่งเข้ารายการโหนกระแส — เป็นพยานบุคคลที่ 3 ที่ไม่มีผลประโยชน์กับฝ่ายใด และหักล้าง "ภาพผู้เสียหาย" ของเกศ
+    </p>
+  </section>
+
+  <!-- ========== VIRAL QUOTES ========== -->
+  <section>
+    <h2>Viral Quotes · คำพูดที่สั่น Timeline</h2>
+    <hr class="rule">
+    <div class="grid-2">
+      <div class="quote-card">
+        <div class="q">"ไอ้นี่ทองเหม็นละ"</div>
+        <div class="attr">— แฟนเก่า · คอมเมนต์ YouTube live 29 พ.ค.</div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"2 คนนี้ศีลเสมอกัน"</div>
+        <div class="attr">— โจ (อดีตสามีเกศ) · DM ส่งเข้ารายการ</div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"อกตัญญูกับผมนะคะ ผมเป็นคนช่วย"</div>
+        <div class="attr">— ป๋อง กพล · โฟนอินรายการโหนกระแส</div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"ผู้ชาย 100 คน เกินครึ่งชอบแบบนี้"</div>
+        <div class="attr">— ทองใหม์ · ตอบเรื่องรสนิยมทางเพศ</div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"เกดไม่ทนอีกแล้ว ถือว่าเราจบกัน เกดจะเอาคืนให้สะสมเลย"</div>
+        <div class="attr">— เกศ · ข้อความหลังเห็นทองใหม์ลบแชท</div>
+      </div>
+      <div class="quote-card">
+        <div class="q">"ผมเก็บรูปปก AV ไว้ในเครื่อง มันไม่ใช่รูปลับอะไรทั้งนั้น"</div>
+        <div class="attr">— ทองใหม์ · แก้ตัวเรื่องรูปตอนเกศหลับ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANALYSIS — 5 WHYS + FISHBONE ========== -->
+  <section>
+    <h2>Analysis · 5 Whys</h2>
+    <hr class="rule">
+    <p style="font-family: var(--serif); font-size: 16px; color: var(--slate); margin-bottom: 14px;">
+      <b>คำถาม:</b> ทำไมเรื่องนี้ระเบิดวันที่ 29 พ.ค. ไม่ใช่ก่อนหน้า?
+    </p>
+    <ol class="whys">
+      <li>เกศเห็นทองใหม์ลบข้อความที่ทักทายเธอใน YouTube live — ข้อความหายไปต่อหน้าต่อตา</li>
+      <li>เพราะก่อนหน้านั้น แฟนเก่าของทองใหม์เพิ่งเข้ามาคอมเมนต์ "ทองเหม็น" — ทำให้ทองใหม์รีบลบเพราะกลัวเกศเห็น</li>
+      <li>เพราะเกศเริ่มสงสัยว่าทองใหม์มีผู้หญิงอื่นค้างคาใจ — การลบข้อความคือ "หลักฐาน guilty mind" ที่หักล้างคำปฏิเสธทุกข้อ</li>
+      <li>เพราะทองใหม์ไม่เคยเปิดเผยตรง ๆ ว่า "ฉันมีผู้หญิงหลายคนจริง แต่คนนี้จริงจัง" — ใช้วิธี "ลบ" แทน "พูด"</li>
+      <li>เพราะฝั่งเกศก็ไม่ได้แยกบ้านกับโจจริง (อ้างว่า "เพื่อลูก") ทำให้ทองใหม์ไม่ไว้ใจตั้งแต่แรก + ใช้ AirTag ของโจเป็นหลักฐาน</li>
+    </ol>
+    <div class="why-root">
+      <div class="label">ROOT CAUSE</div>
+      <p>ทั้งสองฝ่ายเริ่มสัมพันธ์บนรากของ <b>"ความจริงไม่ครบ"</b> — ทองใหม์ปิดเรื่องเมียจดทะเบียน 26 ปี + เกศปิดเรื่องอยู่บ้านเดียวกับโจ + ทั้งคู่รู้ว่าผิดศีลธรรมตั้งแต่วันแรก แต่เลือก "ทำต่อ" เพราะอยากได้ "ความจริงครึ่งเดียว" ที่ตัวเองอยากได้ยิน</p>
+    </div>
+
+    <h3 style="margin-top: 36px; margin-bottom: 6px;">Fishbone (Ishikawa) — กระดูกปลาแห่งสาเหตุ</h3>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      4 กระดูก · แต่ละสาเหตุหล่อหลอม "ความจริงไม่ครบ" ที่เป็นรากของเรื่อง
+    </p>
+    <div style="background: var(--white); border: var(--border); border-radius: var(--radius-panel); padding: 24px; overflow-x: auto;">
+      <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; max-width: 800px; display: block; margin: 0 auto; font-family: var(--sans);">
+        <!-- Main spine -->
+        <line x1="60" y1="190" x2="700" y2="190" stroke="#141413" stroke-width="1.8"/>
+        <!-- Arrow head -->
+        <polygon points="700,190 685,182 685,198" fill="#141413"/>
+        <!-- Effect box -->
+        <rect x="700" y="160" width="90" height="60" rx="6" fill="#D97757" stroke="#141413" stroke-width="1.5"/>
+        <text x="745" y="184" text-anchor="middle" font-size="10.5" font-weight="600" fill="#FAF9F5">JUNCTION</text>
+        <text x="745" y="200" text-anchor="middle" font-size="10.5" font-weight="600" fill="#FAF9F5">29 พ.ค. 69</text>
+        <text x="745" y="214" text-anchor="middle" font-size="9" fill="#FAF9F5">ระเบิด</text>
+
+        <!-- Top bones -->
+        <!-- Bone 1: พฤติกรรม -->
+        <line x1="180" y1="190" x2="180" y2="60" stroke="#141413" stroke-width="1.5"/>
+        <line x1="170" y1="60" x2="190" y2="60" stroke="#141413" stroke-width="1.5"/>
+        <text x="180" y="50" text-anchor="middle" font-size="12" font-weight="600" fill="#141413">พฤติกรรม</text>
+        <text x="180" y="80" text-anchor="middle" font-size="10" fill="#3D3D3A">• รสนิยมทางเพศ</text>
+        <text x="180" y="95" text-anchor="middle" font-size="10" fill="#3D3D3A">• ห้ามใกล้ผู้ชาย</text>
+        <text x="180" y="110" text-anchor="middle" font-size="10" fill="#3D3D3A">• แอบถ่ายตอนหลับ</text>
+
+        <!-- Bone 2: การสื่อสาร -->
+        <line x1="370" y1="190" x2="370" y2="60" stroke="#141413" stroke-width="1.5"/>
+        <line x1="360" y1="60" x2="380" y2="60" stroke="#141413" stroke-width="1.5"/>
+        <text x="370" y="50" text-anchor="middle" font-size="12" font-weight="600" fill="#141413">การสื่อสาร</text>
+        <text x="370" y="80" text-anchor="middle" font-size="10" fill="#3D3D3A">• ลบข้อความใน live</text>
+        <text x="370" y="95" text-anchor="middle" font-size="10" fill="#3D3D3A">• บล็อกทุกช่องทาง</text>
+        <text x="370" y="110" text-anchor="middle" font-size="10" fill="#3D3D3A">• ไม่พูดตรง ๆ เรื่องคนอื่น</text>
+
+        <!-- Bottom bones -->
+        <!-- Bone 3: บริบทคู่สมรส -->
+        <line x1="180" y1="190" x2="180" y2="320" stroke="#141413" stroke-width="1.5"/>
+        <line x1="170" y1="320" x2="190" y2="320" stroke="#141413" stroke-width="1.5"/>
+        <text x="180" y="340" text-anchor="middle" font-size="12" font-weight="600" fill="#141413">บริบทคู่สมรส</text>
+        <text x="180" y="310" text-anchor="middle" font-size="10" fill="#3D3D3A">• เมียจดทะเบียน 26 ปี</text>
+        <text x="180" y="295" text-anchor="middle" font-size="10" fill="#3D3D3A">• อยู่บ้านเดียวกับโจ</text>
+        <text x="180" y="280" text-anchor="middle" font-size="10" fill="#3D3D3A">• AirTag + ภรรยาเตือน</text>
+
+        <!-- Bone 4: การเงิน/ชื่อเสียง -->
+        <line x1="370" y1="190" x2="370" y2="320" stroke="#141413" stroke-width="1.5"/>
+        <line x1="360" y1="320" x2="380" y2="320" stroke="#141413" stroke-width="1.5"/>
+        <text x="370" y="340" text-anchor="middle" font-size="12" font-weight="600" fill="#141413">การเงิน / ชื่อเสียง</text>
+        <text x="370" y="310" text-anchor="middle" font-size="10" fill="#3D3D3A">• ขายเครื่องราง/น้ำหอม</text>
+        <text x="370" y="295" text-anchor="middle" font-size="10" fill="#3D3D3A">• ดูดวง = leverage</text>
+        <text x="370" y="280" text-anchor="middle" font-size="10" fill="#3D3D3A">• "อาณาจักร" อสังหาเกศ</text>
+
+        <!-- Sub-bone: 5th -->
+        <line x1="540" y1="190" x2="540" y2="80" stroke="#141413" stroke-width="1.5"/>
+        <line x1="530" y1="80" x2="550" y2="80" stroke="#141413" stroke-width="1.5"/>
+        <text x="540" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="#141413">Trigger</text>
+        <text x="540" y="100" text-anchor="middle" font-size="10" fill="#3D3D3A">แฟนเก่า</text>
+        <text x="540" y="115" text-anchor="middle" font-size="10" fill="#3D3D3A">คอมเมนต์</text>
+        <text x="540" y="130" text-anchor="middle" font-size="10" fill="#3D3D3A">"ทองเหม็น"</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== ป๋อง FORECAST ========== -->
+  <section>
+    <h2>ป๋อง กพล · เอาไงต่อ</h2>
+    <hr class="rule">
+    <p style="margin-bottom: 18px;">
+      <b>สถานะปัจจุบัน (1 มิ.ย. 2569):</b> พักงานทองใหม์ไร้กำหนด + งดกิจกรรมทั้งหมดในนาม เดอะช็อค จำกัด · "จนกว่าความจริงทุกอย่างจะปรากฏ"
+    </p>
+    <div class="grid-3">
+      <div class="forecast-card">
+        <div class="verdict perm">HIGH RISK</div>
+        <h4>ตัดถาวร</h4>
+        <p>ถ้าคดีเดิน + มีหลักฐานเพิ่ม (แจ้งความจริง / รูปต้นฉบับ) → ตัดถาวรได้ตลอดเวลา เพราะเงื่อนไข "ไม่มีกำหนด" เปิดทางไว้แล้ว</p>
+      </div>
+      <div class="forecast-card">
+        <div class="verdict likely">MOST LIKELY</div>
+        <h4>คงพักไปก่อน</h4>
+        <p>รอบสีเทา · รอผลตรวจสอบข้อเท็จจริงจากสื่อ/ตำรวจ/ทนาย · สูตร "กันตัวเองก่อน" ที่ใช้ในวงการบันเทิงไทยทุกครั้ง</p>
+      </div>
+      <div class="forecast-card">
+        <div class="verdict return">POSSIBLE</div>
+        <h4>กลับมาทีหลัง</h4>
+        <p>ถ้าเรื่องเงียบ + ไม่มีคดีความ + แฟนคลับยังเหนียวแน่น → อาจเงียบ ๆ กลับมาในช่วง 3-6 เดือน</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+      <div class="forecast-card" style="border-left: 3px solid var(--clay);">
+        <div class="verdict" style="color: var(--clay);">RISK TO BRAND</div>
+        <h4>ผลกระทบต่อ PAKE ENT / เดอะช็อค</h4>
+        <p>"วงการเรื่องเล่าผีสะเทือน" · "ความไม่สบายใจให้หลายฝ่าย" · ภาพลักษณ์ "ธรรมะ + ศีลธรรม" เสียหาย — งาน The Shock 13 ต้องหยุดฉายชั่วคราว</p>
+      </div>
+      <div class="forecast-card" style="border-left: 3px solid var(--rust);">
+        <div class="verdict" style="color: var(--rust);">SPONSOR ALERT</div>
+        <h4>ผลกระทบต่อสปอนเซอร์</h4>
+        <p>ถ้าคดียืดเยื้อเกิน 1 เดือน → สปอนเซอร์ที่ผูกกับ "ภาพลักษณ์ศีลธรรม" (เครื่องดื่มสมุนไพร / ของใช้ในบ้าน / ธุรกิจการเงิน) จะถอนตัวก่อน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== YOUTUBE CHANNELS ========== -->
+  <section>
+    <h2>ดูที่ไหน · YouTube Channels</h2>
+    <hr class="rule">
+    <div class="yt-tier">
+      <div class="tier-label">Tier 1 · Mainstream / เนื้อแน่นสุด</div>
+      <div class="grid-2">
+        <div>
+          <h4>โหนกระแส / HKS (ช่อง 3 HD)</h4>
+          <p style="font-size: 13px;">คลิปต้นทาง · "อึ้งทั้งรายการ! เกศ เปิดศึกทองใหม่" (ZSoSjMhuccQ) · LIVE เต็ม 3:30 ชม. "หลอนหลังไมค์ นักเล่าเรื่องผีแอบถ่ายหวังแบล็กเมล" (SVKF92bB6_Q)</p>
+        </div>
+        <div>
+          <h4>ข่าวใส่ไข่ (ไทยรัฐ)</h4>
+          <p style="font-size: 13px;">"สรุปศึกเดือด เกศ-ทองใหม์ ปมแฉคบซ้อน-ภาพแอบถ่าย" (IpZWlv6hm3k) · ตัดประเด็นกระชับ 5-8 นาที เข้าใจง่ายที่สุด</p>
+        </div>
+      </div>
+    </div>
+    <div class="yt-tier">
+      <div class="tier-label">Tier 1 · ฝั่งทองใหม์ + แฟนคลับ</div>
+      <div class="grid-2">
+        <div>
+          <h4>PAKE ENT (ช่องพีคไทม์)</h4>
+          <p style="font-size: 13px;">"เดอะช็อคของจริง! พี่ป๋องประกาศพักงาน คุณทองใหม่" (SfqGWVCc6XM) · คลิปต้นฉบับแถลงการณ์ + คอมเมนต์ด่าสนั่น</p>
+        </div>
+        <div>
+          <h4>Thairath Online</h4>
+          <p style="font-size: 13px;">"ทองใหม่ เปิดใจครั้งแรก! ปฏิเสธข่าวฉาว" (1inqf25TFsw) · ฝั่งทองใหม์ชี้แจง 100% ปฏิเสธแบล็กเมล์ + เปิดเหตุผลแม่ป่วย</p>
+        </div>
+      </div>
+    </div>
+    <div class="yt-tier">
+      <div class="tier-label">Tier 2 · สรุปกระชับ + Reaction</div>
+      <div class="grid-2">
+        <div>
+          <h4>ข่าวช่อง 8 / Thairath</h4>
+          <p style="font-size: 13px;">"สรุปดราม่า! เกศ-ทองใหม่ เดอะช็อค แฉเดือดโหนกระแส" (dHrPBkUDbnw) · ครอบคลุม 360° ทุกประเด็นร้อน</p>
+        </div>
+        <div>
+          <h4>ข่าวบันเทิง (The Standard)</h4>
+          <p style="font-size: 13px;">"ห้องข่าวบันเทิง" (SBEx6yYFhQk) · สรุปในบริบทข่าวบันเทิงรายสัปดาห์</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BIAS AUDIT ========== -->
+  <section>
+    <h2>🚩 Bias Audit · เช็คตัวเองก่อนเชื่อ</h2>
+    <hr class="rule">
+    <p style="color: var(--gray-500); font-size: 13px; margin-top: -8px; margin-bottom: 18px;">
+      3 อคติที่ผู้ชมควรเช็คตัวเองก่อนสรุปว่า "ฝ่ายไหนผิด"
+    </p>
+    <div class="grid-3">
+      <div class="bias-card">
+        <h4>1. Halo Effect</h4>
+        <p>ชอบพิธีกร (หนุ่ม กรรชัย) → เชื่อทั้งรายการตามทันที · แต่พิธีกรมีท่าทีชัดเจน (เช่น "เอากลับไปทั้ง 2 คน") = ไม่ใช่คนกลางจริง</p>
+      </div>
+      <div class="bias-card">
+        <h4>2. Survivorship Bias</h4>
+        <p>เห็นแต่ฝ่ายที่ออกข่าว · ไม่เห็น "ผู้หญิง 10 คน/ปี" ที่ภรรยาจดทะเบียนพูดถึง — เกศอาจเป็นแค่ "1 ใน N" ที่กล้าพูด</p>
+      </div>
+      <div class="bias-card">
+        <h4>3. In-group Favoritism</h4>
+        <p>เลือกฝ่ายตามเพศ/อายุ/อาชีพของผู้ดู · คนชอบ "นักเล่าเรื่องผี" อาจเชื่อทองใหม์ · คนชอบ "ผู้หญิงกล้าพูด" อาจเชื่อเกศ — ทั้งสองเป็น bias</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p style="font-family: var(--serif); font-size: 18px; color: var(--slate); max-width: 100%; margin-bottom: 12px;">
+      <b>"อย่าตัดสินรายการเดียว"</b>
+    </p>
+    <p style="font-size: 13px; color: var(--gray-700); max-width: 100%; margin-bottom: 14px;">
+      รายการ TV เป็น "พื้นที่เล่า" ไม่ใช่ "ศาล" · หลักฐานจริง (แชต/รูป/พยานบุคคล/การแจ้งความ) ต้องตรวจสอบนอกรายการ · ทั้งสองฝ่ายต่างมี "จุดดี" และ "จุดแย่" ปะปนกัน · โจ (อดีตสามีเกศ) เองก็บอกว่า "ศีลเสมอ" = ทั้งสองฝ่ายต่างก็มีส่วนผิด
+    </p>
+    <hr class="rule">
+    <p style="font-size: 11px; color: var(--gray-500); margin-top: 14px;">
+      <b>Provenance:</b> สร้างจาก 8 transcripts (live_honkrasae_main, lonhanglmic_ep2206, nintakhao_2_jun, kunchai_sarop_drama, sao_chae_yub_thongmai, kade_chae_thongmai_short, pong_kreat_short, pake_ent_statement) + 7 Perplexity Research files (BIO, CAREER_FAMILY, THONGMAI, KADE, PONG, INCOME, YT_CHANNELS) + 3 sub-agent analyses (TEAM_THONGMAI_DEFENSE, TEAM_KADE_DEFENSE, REFEREE_VERDICT)<br>
+      <b>Build date:</b> 2026-06-08 · <b>Style:</b> Anthropic warm palette (ivory/slate/clay/oat/olive/rust) · <b>Pattern:</b> Status Report + Explainer + Comparison hybrid
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
